@@ -1,10 +1,20 @@
 /**
  * Module Imports
  */
-const { Client, Collection } = require("discord.js");
+const express = require('express');
+const app = express();
+const port = 3000;
+
+app.get('/', (req, res) => res.send('Bot is Online'));
+
+app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`));
+
+
+const { DiscordJS, Client, Collection } = require("discord.js");
+require('dotenv').config()
 const { readdirSync } = require("fs");
 const { join } = require("path");
-const { TOKEN, PREFIX, LOCALE } = require("./util/EvobotUtil");
+const { PREFIX, LOCALE } = require("./util/EvobotUtil");
 const path = require("path");
 const i18n = require("i18n");
 
@@ -12,8 +22,7 @@ const client = new Client({
   disableMentions: "everyone",
   restTimeOffset: 0
 });
-
-client.login(TOKEN);
+client.login(process.env.TOKEN);
 client.commands = new Collection();
 client.prefix = PREFIX;
 client.queue = new Map();
@@ -50,7 +59,7 @@ i18n.configure({
  */
 client.on("ready", () => {
   console.log(`${client.user.username} ready!`);
-  client.user.setActivity(`${PREFIX}help and ${PREFIX}play`, { type: "LISTENING" });
+  client.user.setActivity(`Ping me for help and Support regarding "music commands" on Socialweebs Discord`, { type: "LISTENING" });
 });
 client.on("warn", (info) => console.log(info));
 client.on("error", console.error);
