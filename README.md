@@ -1,6 +1,11 @@
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/SatyamSSJ10/evobot-heruko-repl-deploy)
 
-![logo](https://repository-images.githubusercontent.com/186841818/8aa95700-7730-11e9-84be-e80f28520325)
+After deploying it to heruko, got to app settings and configure your Config Variables
+
+
+![logo](https://cdn.discordapp.com/attachments/673854951201570830/815950352221339678/Capture.PNG)
+
+Note: you can also add soundcloud Id through - SOUNDCLOUD_CLIENT_ID
 
 # 🤖 EvoBot (Discord Music Bot)
 > EvoBot is a Discord Music Bot built with discord.js & uses Command Handler from [discordjs.guide](https://discordjs.guide)
